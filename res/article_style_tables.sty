@@ -1,0 +1,26 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/article_style_tables}[2025-05-16
+	This package provides settings for tables.
+]
+
+\RequirePackage{rotating}  % Sideways figures and tables.
+	%% \RequirePackage[figuresright/figuresleft]{rotating} for \documentclass{book}.
+	
+	%> See usage at https://www.ctan.org/pkg/rotating.
+	%> See examples at https://codeyarns.com/tech/2014-11-11-how-to-insert-figure-sideways-in-latex.html.
+	%# \begin{sidewaysfigure}...\end{sidewaysfigure}
+	%# \begin{sidewaystable}...\end{sidewaystable}
+
+\RequirePackage{multirow}  % Multi-row merge and multi-column merge.
+	%% Use * for default value. e.g. \multirow{_rows_}*{_text_}.
+	%% Use ~ for placeholders.
+	
+	%> See usages and examples at https://blog.csdn.net/wzxlovesy/article/details/69063271.
+	%# \multirow{_rows_}{_width_}{_text_}
+	%# \multicolumn{_cols_}{_height_}{_text_}
+	%# \cline{}
+
+%\RequirePackage{booktabs}  % 3-ruled table. EM Deprecated.
+
+\RequirePackage{chngcntr}
+\counterwithin{table}{section}  % The equations are numbered according to section.

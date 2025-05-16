@@ -1,0 +1,119 @@
+% version 2025.0516
+
+% -------- document class --------
+%\documentclass[a4paper, twoside, 12pt]{customized}
+\documentclass[a4paper, twoside, 12pt]{article}
+%	%# oneside, twoside
+%	%# openany, openright (\documentclass{book} only)
+
+% -------- preamble --------
+\usepackage{preamble}
+
+\setstretch{1.5}
+\setlength{\baselineskip}{22pt}
+
+% -------- document content --------
+\begin{document}
+
+\maketitle
+
+\include{pgs/TitlePage.tex}  % Remember to change the logo.
+\include{pgs/ENGTitlePage.tex}  % Remember to change the logo.
+	%% \include inserts the file to a new page, while \input does not.
+
+% Main body page style default setting: 
+	%% The main body has NO pagestyle by default except centered foot pagenumber. 
+\pagestyle{plain}
+\include{pgs/Confidential.tex}  % Remember to change the university name. 
+
+\pagestyle{artimain}
+\pagenumbering{Roman}
+\raggedbottom
+	%% \raggedbottom makes all pages the height of the text on that page. 
+	%% w/o this declaration, LaTeX will try to stretch vertical spaces
+	%% between paragraphs to fill out the page.
+	
+	%> For unappropriate vertical space stretching, see https://latexref.xyz/Layout.html#Layout. 
+	%# \flushbottom
+	%# \raggedbottom
+
+\include{pgs/CH_abstract.tex}
+\include{pgs/EN_abstract.tex}
+\zihao{-4}\songti
+\include{pgs/contents.tex}  % Page number restarts from 1 in contents.
+\clearintentionalpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{pgs/preface.tex}
+
+% -------- Enter here --------
+	%% Copy&Paste pgs/protected/newChpt.tex to add new chapters.
+	
+\include{pgs/chpt1.tex}
+\include{pgs/Conclusion.tex}
+
+% -------- End --------
+
+\include{pgs/ref.tex}
+
+\include{pgs/attachment.tex}
+
+\include{pgs/progress.tex}
+\include{pgs/Acknowledgement.tex}
+\end{document}
+
+
+
+\begin{comment}
+
+% Image insertation. 
+	\begin{figure}[!htb]
+	\centering
+		\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth, angle=0]{}
+		\caption{}
+		\label{}
+		\end{subfigure}
+	\caption{}
+	\label{}
+	\end{figure}
+	
+% Table insertation.
+	\begin{table}[!htb]
+	\caption{}
+	\label{}
+	\centering
+		\begin{tabular}{c|c|c}
+		&&
+		\\
+		\hline
+		~&~&~
+		\\[-1em]
+		&&
+		\\
+		\hline
+		~&~&~
+		\\[-1em]
+		&&
+		\end{tabular}
+	\end{table}
+
+% Algorithm insertation.
+	\begin{algorithm}[!htb]
+	\zihao{5}
+	\SetKwInOut{KIN}{input header}
+	\SetKwInOut{KOUT}{output header}
+	\caption{}
+	\label{}
+	\KIN{input content}
+	\If{condition if}{
+		\While{condition while}{
+			operation 1
+			\\ operation 2
+		}
+	}
+	\end{algorithm}
+
+\end{comment}

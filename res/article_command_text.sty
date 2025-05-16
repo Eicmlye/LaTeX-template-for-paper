@@ -1,0 +1,13 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/article_command_text}[2025-05-16
+	This package provides new commands for texts.
+]
+
+% Text command.
+	\newcommand{\tbs}{\textbackslash}
+	\newcommand{\pit}{\par\noindent}
+	\newcommand{\nlt}{\newline\hspace*{2em}}
+	\newcommand{\romannum}[1]{\uppercase\expandafter{\romannumeral#1}}
+
+% Citation.
+	\newcommand{\sct}[2]{\textsuperscript{\cite{#1}{#2}}}

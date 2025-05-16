@@ -1,0 +1,88 @@
+% !TeX root = ../paper.tex
+	%% This is a command line instruction for TeXworks,
+	%% telling TeXworks where the main document to be typesetted is.
+	%% So now you can just Ctrl+T in this file w/o switching to the main one
+	%% and TeXworks will correctly typeset the main document.
+	%% See section 4.2 at https://github.com/TeXworks/manual/releases.
+
+% Some command in titlepage: 
+	%% env{flushleft},env{flushright}: left or right alignment. 
+	%% \testsc{}: All letters are capitalized, while the first letter is larger. 
+	%% \vfill: Add vertical space to fill out the page. 
+	%# \Huge,\huge,\LARGE,\Large,\large,\small,\footnotesize,\tiny.
+	
+	%% 2 * '\ ' == 1 * digit
+	%% 4 * '\ ' == 1 * CHN_char == 1 * \quad
+	%% 1 * \quad == 1 * length of 'M'
+	%% 2 * \quad == 1 * \qquad
+	%% For length units conversion, see https://chenfuture.wordpress.com/2008/03/22/math-spacing-and-length-units/.
+
+\begin{titlepage}
+	\begin{textblock*}{5cm}(0.9\textwidth, 35mm) % 调整坐标定位
+	\fbox{
+		\ \ \parbox{8em}{
+			\zihao{5}\heiti
+			\ \vspace{-0.3em}
+			\\$\bigstar$学生类型
+			\\$\square\ $工程硕博士专项
+			\\$\square\ $交叉研究方向
+			\\$\square\ $政府项目留学生\vspace{0.4em}
+		}
+	}
+	\end{textblock*}
+	{\zihao{5}\heiti 中图分类号: }
+	\vspace{-5pt}\par {\zihao{5}\heiti UDC分类号: }
+	\begin{center}
+	\vspace*{-3em}\ 
+	% upper part of the page
+	\\	\vspace*{6em}
+	\zihao{-2}\ 
+	\\[0.5em]
+	{\heiti\titlethesisCHNi}
+	\\[0.5em]
+	{\heiti\titlethesisCHNii}
+	\\ \vspace*{4em}
+	\end{center}
+	\zihao{-3}
+	{\heiti \makebox[90pt][l]{}作\ \ 者\ \ 姓\ \ 名\qquad\ \ \underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}学\ \ 院\ \ 名\ \ 称\qquad\ \ \underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}指\ \ 导\ \ 教\ \ 师\qquad\ \ \underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}行业合作导师\qquad\underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}答辩委员会主席\quad\underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}申\ \ 请\ \ 类\ \ 别\qquad\ \ \underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}学\ \ 位\ \ 领\ \ 域\qquad\ \ \underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}学位授予单位\qquad\underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[0.5em]
+	{\heiti \makebox[90pt][l]{}论文答辩日期\qquad\underline{\makebox[10em][c]{
+	\ 
+	}}}
+	\\[1em]
+	\vspace{0em}  % to suppress warnings: Underfull \hbox (badness 10000) in paragraph at lines xx--xx
+	\begin{center}
+	\vfill
+	% bottom of the page
+	\end{center}
+\end{titlepage}

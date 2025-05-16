@@ -1,0 +1,74 @@
+% !TeX root = ../paper.tex
+	%% This is a command line instruction for TeXworks,
+	%% telling TeXworks where the main document to be typesetted is.
+	%% So now you can just Ctrl+T in this file w/o switching to the main one
+	%% and TeXworks will correctly typeset the main document.
+	%% See section 4.2 at https://github.com/TeXworks/manual/releases.
+
+% Some command in titlepage: 
+	%% env{flushleft},env{flushright}: left or right alignment. 
+	%% \testsc{}: All letters are capitalized, while the first letter is larger. 
+	%% \vfill: Add vertical space to fill out the page. 
+	%# \Huge,\huge,\LARGE,\Large,\large,\small,\footnotesize,\tiny.
+	
+	%% 2 * '\ ' == 1 * digit
+	%% 4 * '\ ' == 1 * CHN_char == 1 * \quad
+	%% 1 * \quad == 1 * length of 'M'
+	%% 2 * \quad == 1 * \qquad
+	%% For length units conversion, see https://chenfuture.wordpress.com/2008/03/22/math-spacing-and-length-units/.
+
+\begin{titlepage}
+	\begin{center}
+	\vspace*{-3em}\ 
+	% upper part of the page
+	\\	\vspace*{5em}
+	\zihao{-2}\ 
+	\\[0.5em]
+	\textbf{\titlethesisENG}
+	\\ \vspace*{4.5em}
+	\end{center}
+	\zihao{-3}
+	{\makebox[10pt][l]{}Candidate Name:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}School or Department:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}Faculty Mentor:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}Industry Collaboration Mentor:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}Chair, Thesis Committee:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}Degree Applied:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}Major:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}Degree by:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[0.5em]
+	{\makebox[10pt][l]{}The Date of Defence:\hfill\underline{\makebox[15em][c]{
+	
+	}}}
+	\\[1em]
+	\vspace{0em}  % to suppress warnings: Underfull \hbox (badness 10000) in paragraph at lines xx--xx
+	\begin{center}
+
+	\vfill
+	
+	% bottom of the page
+	\end{center}
+\end{titlepage}

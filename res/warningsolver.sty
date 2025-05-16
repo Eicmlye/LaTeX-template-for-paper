@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/warningsolver}[2025-05-16
+	This package solves certain warnings.
+]
+
+%\RequirePackage{fix-cm}
+	%% Solve LaTeX Font Warnings: Font shape '.../cmr/.../...' in size <...> not available.
+	%> See solutions to other font families at https://chaoli.club/index.php/5575/0
+
+%% Solve LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
+%% size <10.95> substituted on input line 22.
+\DeclareFontFamily{U}{rsfs}{\skewchar\font127 }
+\DeclareFontShape{U}{rsfs}{m}{n}{%
+   <-6> rsfs5
+   <6-8> rsfs7
+   <8-> rsfs10
+}{}
+
+%% Solve LaTeX Font Warning: Font shape `OMS/TimesNewRoman(0)/m/n' undefined
+%% using `OMS/cmsy/m/n' instead on input line 24.
+%% sample trigger: \textcircled{\small 1}
+\DeclareFontFamily{OMS}{TimesNewRoman(0)}{\skewchar\font127 }
+\DeclareFontShape{OMS}{TimesNewRoman(0)}{m}{n}{%
+   <-6> cmsy5
+   <6-8> cmsy7
+   <8-> cmsy10
+}{}
+
+%% Solve Underfull \hbox (badness 10000) in paragraph at lines xx--xx
+%> https://tex.stackexchange.com/questions/334246
+%% To solve this warning, never use \\ at the end of a paragraph or block.
+%% Use \\\vspace{0em} may help.

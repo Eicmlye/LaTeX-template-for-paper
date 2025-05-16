@@ -1,0 +1,128 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/article_style_contents}[2025-05-16
+	This package manages contents typesettings.
+]
+
+% Customize contents display.
+\RequirePackage{titletoc}  % Customize contents labels. 
+
+\renewcommand{\contentsname}{目\qquad 录}
+\renewcommand{\listfigurename}{插\qquad 图}
+\renewcommand{\listtablename}{表\qquad 格}
+	%> For changing LaTeX 'Fixed names', see https://texfaq.org/FAQ-fixnam.
+	%> For customized contentsline, see https://tex.stackexchange.com/questions/628934/how-to-format-contentslabel-in-titletoc.
+\captionsetup{font=small}
+
+\contentsmargin{0pt}  % The right margin of contents lines.
+	
+% Customize the titles displayed in document environment.
+\RequirePackage{titlesec}  % Customize chapter labels.
+	%# \titleformat{chapter}[shape]{format}{label}{sep}{before}[after]
+	%> See usage at https://www.ctan.org/pkg/titlesec.
+
+\titlecontents{figure}[0pt]{\vspace*{0.5em}\songti}  % above code
+	{图\thecontentslabel\hspace{1.5em}}  % numbered chapter
+	{}  % numberless chapter
+	{\titlerule*[0.75em]{$\cdot$}\quad\thecontentspage}
+
+\titlecontents{table}[0pt]{\vspace*{0.5em}\songti}  % above code
+	{表\thecontentslabel\hspace{1.5em}}  % numbered chapter
+	{}  % numberless chapter
+	{\titlerule*[0.75em]{$\cdot$}\quad\thecontentspage}
+
+\newcommand{\resetcontentslabels}{
+	\titlecontents{section}[0pt]{\vspace*{1em}\bf\songti}  % above code
+		{第\thecontentslabel 章\hspace{1.5em}}  % numbered chapter
+		{}  % numberless chapter
+		{\titlerule*[0.75em]{$\cdot$}\quad\textbf{\thecontentspage}}
+		
+	\titlecontents{subsection}[0pt]{\songti}  % above code
+		{\hspace{1.5em}\thecontentslabel\hspace{1.5em}}  % numbered chapter
+		{}  % numberless chapter
+		{\titlerule*[0.75em]{$\cdot$}\quad\thecontentspage}
+		
+	\titlecontents{subsubsection}[0pt]{\songti}  % above code
+		{\hspace{4.5em}\thecontentslabel\hspace{1.5em}}  % numbered chapter
+		{}  % numberless chapter
+		{\titlerule*[0.75em]{$\cdot$}\quad\thecontentspage}
+
+	\renewcommand{\thesection}{\arabic{section}}
+	\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+	\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+	
+	\titleformat{\section}{\zihao{3}\bfseries\heiti\centering}{第\thesection 章}{1em}{}
+	\titleformat{\subsection}{\zihao{4}\bfseries\heiti}{\thesubsection}{1em}{}
+	\titleformat{\subsubsection}{\zihao{-4}\bfseries\heiti}{\thesubsubsection}{1em}{}
+}
+
+\resetcontentslabels
+
+\newcommand{\alphappendix}{
+	\appendix
+
+	\titlecontents{section}[0pt]{\vspace*{1em}\bf\songti}  % above code
+		{\thecontentslabel\hspace{1.5em}}  % numbered chapter
+		{}  % numberless chapter
+		{\titlerule*[0.75em]{$\cdot$}\quad\textbf{\thecontentspage}}
+		
+	\titlecontents{subsection}[0pt]{\songti}  % above code
+		{\hspace{1.5em}\thecontentslabel\hspace{1.5em}}  % numbered chapter
+		{}  % numberless chapter
+		{\titlerule*[0.75em]{$\cdot$}\quad\thecontentspage}
+		
+	%\renewcommand{\thesection}{\arabic{section}}  % \appendix renew this command to \Alph{section}.
+	\renewcommand{\thesubsection}{\Alph{subsection}}
+	\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+	
+	%\titleformat{\section}{\zihao{3}\bfseries\heiti\centering}{\thesection}{1em}{}
+	\titleformat{\subsection}{\zihao{-3}\bfseries\heiti}{\thesubsection}{1em}{}
+	\titleformat{\subsubsection}{\zihao{4}\bfseries\heiti}{\thesubsubsection}{1em}{}
+}
+\newcommand{\finishalphappendix}{\resetcontentslabels}
+	
+\RequirePackage[ruled]{algorithm2e}
+\renewcommand{\algorithmcfname}{算法}
+
+\RequirePackage{listings}  % Highlighted code imported from other files.
+	%> See usage at https://ctan.org/pkg/listings. 
+	
+\renewcommand{\lstlistlistingname}{清单目录}
+\renewcommand{\lstlistingname}{清单}
+
+%> See detailed settings at https://ctan.org/pkg/listings.
+\lstset{
+	%% The path of attachments.
+	inputpath={./attachment/},
+	%% Print range.
+	showlines=false,
+	%% Listing appearance.
+		%% fonts
+		basicstyle=\small\ttfamily,  % Style settings for the whole listing.
+		commentstyle=\ttfamily\slshape\color{LimeGreen},
+		stringstyle=\ttfamily\color{DarkOrange},
+		%% color
+		backgroundcolor=\color{white},
+		%% frame
+		frame=none,  %# single, trblTRBL
+		framerule=0pt,
+	%% Line number.
+	numbers=left,  % Position of line numbers.
+	numberstyle=\rmfamily\color{gray}, % Style of line numbers.
+	stepnumber=1,  % Line numbers display every (stepnumber) lines.
+	numbersep=10pt,  % The distance between line numbers and the listing.
+	numberblanklines=true,  % Whether the blank lines will be numbered.
+	firstnumber=auto,  % The first line to be numbered.
+	%% Tab and spaces.
+	%showspaces=false,
+	%showstringspaces=false,
+	%showtabs=false,
+	%tab=$\to$,  % This token will replace tabs if showtabs=true.
+	tabsize=2,
+	%% Captions.
+	captionpos=t,  %# t, b
+	%% Line breaks.
+	breaklines=true,  % Whether to allow auto line breaking.
+	breakatwhitespace=true,  % If true, line breaks are allowed only at ws.
+	%% Lstlistoflisting.
+	nolol=false  % If true, this listing will not be included in the list of listings.
+	}

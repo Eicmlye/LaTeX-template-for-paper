@@ -1,0 +1,17 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/article_style_graphics}[2025-05-16
+	This package deals with graphical settings.
+]
+
+\RequirePackage{graphicx}
+	\graphicspath{{./img/}}  % Notice there are TWO pairs of brackets!!!
+		%% Put pictures in './img/'.
+
+\RequirePackage{float}  % Supercede \caption command.
+
+\RequirePackage{caption}  % Enable figure captions.
+
+\RequirePackage{subcaption}  % Enable subfigure captions.
+
+\RequirePackage{chngcntr}
+\counterwithin{figure}{section}  % The figures are numbered according to section.

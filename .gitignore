@@ -1,0 +1,21 @@
+# see gitignore rules at https://www.cnblogs.com/kevingrace/p/5690241.html
+
+# LaTeX output
+*.aux
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.synctex.gz
+*.thm
+*.toc
+
+# vscode settings
+# /.vscode/
+
+# tmp files
+*tmp*
+*temp*
+
+# newline at the end of file is necessary for format.sh to read the file completely

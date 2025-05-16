@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/article_command_document}[2025-05-16
+	This package provides commands for special document pages.
+]
+
+\makeatletter		
+	\newcommand{\clearblankpage}[1][~]{
+		\clearpage
+		\if@twoside
+			\ifodd
+				\c@page
+			\else
+				\mbox{}
+				\vfill
+				\begin{center}
+					#1
+				\end{center}
+				\vfill
+				\thispagestyle{empty}
+				\newpage
+				\if@twocolumn
+					\mbox{}
+					\newpage
+				\fi
+			\fi
+		\fi
+		}
+\makeatother
+		
+\newcommand{\clearintentionalpage}{\clearblankpage[This page intentionally left blank.]}
+	%> See https://tex.stackexchange.com/questions/269611/
+	%> See http://www.hijtr.com/latex-book-this-page-is-intetionally-left-blank/.

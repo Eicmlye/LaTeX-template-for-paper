@@ -1,0 +1,47 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{res/article_style_page}[2025-05-16
+	This package adjusts page settings.
+]
+
+\RequirePackage{geometry}  % Page margin adjustment.
+	\geometry{left=27mm, right=27mm, top=35mm, bottom=25mm}
+
+\RequirePackage{setspace}
+
+\setlength{\baselineskip}{32pt}
+%\setlength{\footskip}{27pt}  % Default 27pt.
+\setlength{\topmargin}{-20pt}
+%\setlength{\columnsep}{1cm}
+\setcounter{secnumdepth}{4}  % Define the depth of numbered sections. 
+	%% x.x.x.x. deepest for 4.
+\setcounter{tocdepth}{3}  % Define the depth of numbered sections displayed in table of contents.
+	%% x.x. deepest for 2.
+	
+\RequirePackage{fancyhdr}  % Import fancy page style management.
+\RequirePackage{lastpage}  % Import macro argument `LastPage'.
+
+% Mainbody.
+\fancypagestyle{prepages}{
+	\fancyhf{}  % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0pt}
+	}
+\fancypagestyle{artimain}{
+	\fancyhf{}  % clear all header and footer fields
+	\fancyhead[C]{\zihao{5}}
+	\fancyfoot[C]{  %# R, C, L; O, E
+%					\hrulefill
+					\raisebox{-2.7pt}{\quad\thepage\quad}
+%					\hrulefill
+					}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\setlength{\headheight}{13pt}
+	}
+	
+% Redefine pagestyle `plain'.
+\fancypagestyle{plain}{
+	\fancyhf{}  % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	}
